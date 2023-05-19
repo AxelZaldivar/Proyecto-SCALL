@@ -12,3 +12,15 @@ Para este proyecto se requirió instalar 4 frameworks, el primero el de Vue.js, 
 A continuación, se muestran unas capturas de pantalla del programa ya desplegado.
 Imagen de inicio de sesión.
 ![image](https://github.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0002.jpg)
+Imagen de registro.
+![image](https://github.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0003.jpg)
+Parte superior del gráfico.
+![image](https://github.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0004.jpg)
+Parte inferior del gráfico
+![image](https://github.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0007.jpg)
+Parte superior de la vista principal
+![image](https://github.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0009.jpg)
+Parte intermedia de la vista principal
+![image](https://github.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0010.jpg)
+Parte inferior de la vista principal
+![image](https://github.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0005.jpg)
