@@ -11,4 +11,4 @@ Para este proyecto se requirió instalar 4 frameworks, el primero el de Vue.js, 
 
 A continuación, se muestran unas capturas del proyecto funcionando:
 ![Inicio de sesión]
-(https://raw.githubusercontent.com/AxelZaldivar/master/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0002.jpg)
+(https://raw.githubusercontent.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0002.jpg)
