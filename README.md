@@ -9,5 +9,6 @@ Para este proyecto se requirió instalar 4 frameworks, el primero el de Vue.js, 
 4) npm install bulma --save
 5) npm install chartjs
 
-En la carpeta "Capturas de pantalla" se muestran algunas imágenes de la página desplegada.
+A continuación, se muestran unas capturas de pantalla del programa ya desplegado.
+Imagen de inicio de sesión.
 ![image](https://github.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0002.jpg)
