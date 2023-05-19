@@ -10,3 +10,4 @@ Para este proyecto se requirió instalar 4 frameworks, el primero el de Vue.js, 
 5) npm install chartjs
 
 En la carpeta "Capturas de pantalla" se muestran algunas imágenes de la página desplegada.
+![image](https://github.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0002.jpg)
