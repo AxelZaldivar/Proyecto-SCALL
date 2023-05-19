@@ -9,5 +9,6 @@ Para este proyecto se requirió instalar 4 frameworks, el primero el de Vue.js, 
 4) npm install bulma --save
 5) npm install chartjs
 
-A continuación, se muestran unas capturas del proyecto funcionando.
-https://github.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0002.jpg
+A continuación, se muestran unas capturas del proyecto funcionando:
+![Inicio de sesión]
+(https://github.com/AxelZaldivar/Proyecto-equipo-Saldivar-Saavedra/blob/main/Capturas%20de%20pantalla/IMG-20230519-WA0002.jpg)
