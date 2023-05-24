@@ -37,6 +37,11 @@
                   <i class="fa fa-tint"></i>
                   <span class="espacio">Precipitación anual</span>
                 </router-link>
+                <!--Pronóstico-->
+                <a class="navbar-item" href="https://pronostico.vercel.app/">
+                  <i class="fa fa-cloud"></i>
+                  <span class="espacio">Pronóstico del clima</span></a
+                >
                 <!--Update-->
                 <router-link class="navbar-item" to="/update">
                   <i class="fa fa-user-circle"></i>
@@ -49,7 +54,7 @@
                 >
               </div>
             </div>
-            <p class="white">aaaaaa</p>
+            <p class="white">aaaaaaaaa</p>
           </template>
 
           <template v-else>
