@@ -68,12 +68,9 @@ export default {
   },
   name: "Register",
   mounted() {
-    this.logout();
+    firebase.auth().signOut();
   },
   methods: {
-    logout() {
-      firebase.auth().signOut();
-    },
     register() {
       this.error = "";
       if (this.name && this.email && this.password) {
@@ -103,7 +100,7 @@ export default {
                       limpio: true,
                     })
                     .then(() => {
-                      console.log("Registro exitoso");
+                      console.log("RegEx");
                       this.$router.push({ name: "dashboard" });
                     })
                     .catch((err) => {
