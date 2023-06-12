@@ -39,7 +39,7 @@
         </form>
 
         <div class="error" v-if="error">
-          <hr>
+          <hr />
           <div class="notification is-danger">
             {{ error }}
           </div>
@@ -55,6 +55,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import { getAuth, updateProfile } from "firebase/auth";
+const collection = db.collection("Usuarios");
 
 export default {
   data() {
@@ -78,13 +79,29 @@ export default {
             if (user) {
               const auth = getAuth();
               updateProfile(auth.currentUser, {
-                  displayName: this.name,
-                })
+                displayName: this.name,
+              })
                 .then((u) => {
                   this.name = "";
                   this.email = "";
                   this.password = "";
-                  this.$router.push({ name: "dashboard" });
+                  const userID = user.user.uid;
+                  //insertar el registro
+                  collection.doc(userID)
+                    .set({
+                      pluviometro: 0,
+                      captar: 0,
+                      tanque: 0,
+                      nivel: 0,
+                      limpio: true,
+                    })
+                    .then(() => {
+                      console.log("Registro exitoso");
+                      this.$router.push({ name: "dashboard" });
+                    })
+                    .catch((err) => {
+                      this.error = err.message + "Error al crear el documento.";
+                    });
                 })
                 .catch((err) => {
                   this.error = err.message;
