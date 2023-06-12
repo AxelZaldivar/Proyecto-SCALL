@@ -68,7 +68,6 @@ export default {
   },
 
   mounted() {
-    //this.getYears();
     this.cargarDatos();
   },
 
@@ -116,7 +115,6 @@ export default {
 
     //funcion para cargar los datos al grafico
     cargarDatos() {
-      //carga la informacion desde la funcion getData
       this.getData().then((data) => {
         this.chartData.datasets[0].data =
           this.chartData.datasets[0].data.concat(
