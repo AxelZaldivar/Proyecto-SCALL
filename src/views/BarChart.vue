@@ -107,25 +107,15 @@ export default {
             querySnapshot.forEach((doc) => {
               this.count = this.count + 1;
               this.years.push(doc.data());
-              /*const data = {
-                id: doc.id,
-                data: doc.data(),
-              };
-              this.years.push(data);*/
             });
           }
         })
         .catch(() => (this.find = true));
-      console.log(this.years);
       this.cargarDatos();
     },
 
     //funcion para cargar los datos al grafico
     cargarDatos() {
-      /*const valoresEnero = this.years.map((item) => item.Enero);
-      console.log(valoresEnero);
-      this.chartData.datasets[0].data.concat(valoresEnero.map((item) => item.Enero));*/
-
       //carga la informacion desde la funcion getData
       this.getData().then((data) => {
         this.chartData.datasets[0].data =
