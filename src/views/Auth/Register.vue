@@ -67,7 +67,13 @@ export default {
     };
   },
   name: "Register",
+  mounted() {
+    this.logout();
+  },
   methods: {
+    logout() {
+      firebase.auth().signOut();
+    },
     register() {
       this.error = "";
       if (this.name && this.email && this.password) {
@@ -87,7 +93,8 @@ export default {
                   this.password = "";
                   const userID = user.user.uid;
                   //insertar el registro
-                  collection.doc(userID)
+                  collection
+                    .doc(userID)
                     .set({
                       pluviometro: 0,
                       captar: 0,
