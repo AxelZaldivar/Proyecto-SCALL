@@ -6,6 +6,8 @@ import Login from '../views/Auth/Login.vue'
 import Register from '../views/Auth/Register.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Update from '../views/Auth/Update.vue'
+import SCALL from '../views/SCALL.vue'
+import Excedente from '../views/Excedente.vue'
 
 //importar Firebase para recuperar el usuario y darle acceso al Dashboard
 import firebase from 'firebase/compat/app';
@@ -44,6 +46,22 @@ const routes = [
     requireAuth: true
   }
 },
+{
+  path: '/SCALL',
+  name: 'SCALL',
+  component: SCALL,
+  meta: {
+    requireAuth: true
+  }
+},
+{
+  path: '/Excedente',
+  name: 'Excedente',
+  component: Excedente,
+  meta: {
+    requireAuth: true
+  }
+}
 ]
 
 const router = createRouter({
@@ -51,7 +69,7 @@ const router = createRouter({
   routes
 })
 
-//solo permitir el acceso al Dashboard si se ha iniciado sesión
+//solo permitir el acceso si se ha iniciado sesión
 router.beforeEach((to, from, next) => {
   if(to.matched.some(ruta=>ruta.meta.requireAuth)){
     const user = firebase.auth().currentUser;
