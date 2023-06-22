@@ -3,7 +3,7 @@
     <div class="navbar-brand">
       <router-link class="navbar-item" to="/">
         <img src="@/components/assets/logo.png" class="logo" />
-        <h3 class="title is-3">Sistema de Captación de Agua de Lluvia</h3>
+        <h3 class="title is-3">SCALL</h3>
       </router-link>
 
       <a
@@ -42,6 +42,16 @@
                   <i class="fa fa-cloud"></i>
                   <span class="espacio">Pronóstico del clima</span></a
                 >
+                <!--SCALL-->
+                <router-link class="navbar-item" to="/SCALL">
+                  <i class="fa fa-cog"></i>
+                  <span class="espacio">Configurar el SCALL</span>
+                </router-link>
+                <!--Excedente-->
+                <router-link class="navbar-item" to="/Excedente">
+                  <i class="fa fa-exclamation"></i>
+                  <span class="espacio">Excendete de agua</span>
+                </router-link>
                 <!--Update-->
                 <router-link class="navbar-item" to="/update">
                   <i class="fa fa-user-circle"></i>
