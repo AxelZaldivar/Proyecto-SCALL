@@ -55,7 +55,8 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import { getAuth, updateProfile } from "firebase/auth";
-const collection = db.collection("Usuarios");
+const collectionU = db.collection("Usuarios");
+const collectionE = db.collection("Excedente");
 
 export default {
   data() {
@@ -78,38 +79,9 @@ export default {
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password)
           .then((user) => {
-            //actualizar el usuario
             if (user) {
-              const auth = getAuth();
-              updateProfile(auth.currentUser, {
-                displayName: this.name,
-              })
-                .then((u) => {
-                  this.name = "";
-                  this.email = "";
-                  this.password = "";
-                  const userID = user.user.uid;
-                  //insertar el registro
-                  collection
-                    .doc(userID)
-                    .set({
-                      pluviometro: 0,
-                      captar: 0,
-                      tanque: 0,
-                      nivel: 0,
-                      limpio: true,
-                    })
-                    .then(() => {
-                      console.log("RegEx");
-                      this.$router.push({ name: "dashboard" });
-                    })
-                    .catch((err) => {
-                      this.error = err.message + "Error al crear el documento.";
-                    });
-                })
-                .catch((err) => {
-                  this.error = err.message;
-                });
+              this.actualizarUsuario();
+              this.crearDocumentoUsuario(user.user.uid);
             }
           })
           .catch((err) => {
@@ -118,6 +90,52 @@ export default {
       } else {
         this.error = "Todos los campos son requeridos";
       }
+    },
+    actualizarUsuario() {
+      const auth = getAuth();
+      updateProfile(auth.currentUser, {
+        displayName: this.name,
+      })
+        .then((u) => {
+          this.name = "";
+          this.email = "";
+          this.password = "";
+        })
+        .catch((err) => {
+          this.error = err.message;
+        });
+    },
+    crearDocumentoUsuario(userID) {
+      collectionU
+        .doc(userID)
+        .set({
+          pluviometro: "0",
+          captar: "0",
+          tanque: "0",
+          nivel: "-1",
+          limpio: "-1",
+          mm: "-1",
+        })
+        .then(() => {
+          this.crearDocumentoExcedente(userID);
+        })
+        .catch((err) => {
+          this.error = err.message + "Error al crear el documento.";
+        });
+    },
+    crearDocumentoExcedente(userID) {
+      collectionE
+        .doc(userID)
+        .set({
+          Bañarse: "100",
+        })
+        .then(() => {
+          console.log("RegEx");
+          this.$router.push({ name: "dashboard" });
+        })
+        .catch((err) => {
+          this.error = err.message + "Error al crear el documento.";
+        });
     },
   },
 };

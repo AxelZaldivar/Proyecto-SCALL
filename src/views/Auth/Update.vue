@@ -5,6 +5,23 @@
         <h3 class="title is-3">Actualiza tu cuenta</h3>
         <hr />
         <form action="#" @submit.prevent="update">
+          <!--ID del usuario-->
+          <div class="field">
+            <label class="label"
+              >ID (dato necesario para configurar el microcontrolador del
+              SCALL)</label
+            >
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="e.g Alex Smith"
+                v-model="id"
+                readonly
+              />
+            </div>
+          </div>
+
           <div class="field">
             <label class="label">Nombre</label>
             <div class="control">
@@ -17,13 +34,14 @@
             </div>
           </div>
           <div class="field">
-            <label class="label">Email</label>
+            <label class="label">Correo</label>
             <div class="control">
               <input
                 class="input"
-                type="email"
-                placeholder="e.g. alexsmith@gmail.com"
+                type="text"
+                placeholder="e.g Alex Smith"
                 v-model="email"
+                readonly
               />
             </div>
           </div>
@@ -33,7 +51,11 @@
               <input class="input" type="password" v-model="password" />
             </div>
           </div>
-          <br /><button type="submit" class="button is-primary">
+          <br /><button
+            type="submit"
+            class="button is-primary"
+            :disabled="!formIsValid"
+          >
             Actualizar
           </button>
         </form>
@@ -59,46 +81,75 @@
 </template>
 
 <script>
-import db from "@/firebase/init.js";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
-import { getAuth, updateProfile } from "firebase/auth";
 
 export default {
   data() {
     return {
+      id: "",
       name: "",
       email: "",
       password: "",
       error: "",
-      good: "",
+      good: false,
     };
   },
   name: "Update",
+  mounted() {
+    this.identificarUsuario();
+  },
   methods: {
+    identificarUsuario() {
+      const user = firebase.auth().currentUser;
+      if (user) {
+        this.id = user.uid;
+        this.name = user.displayName;
+        this.email = user.email;
+      } else {
+        this.$router.push({ name: "dashboard" });
+      }
+    },
     update() {
-      this.error = "";
-      if (this.name && this.email && this.password) {
-        const auth = getAuth();
-        updateProfile(auth.currentUser, {
-          displayName: this.name,
-          email: this.email,
-          password: this.password,
-        })
-          .then((u) => {
-            this.name = "";
-            this.email = "";
-            this.password = "";
-            this.good = "good";
-            window.location.reload();
-          })
-          .catch((err) => {
-            this.error = err.message;
-          });
+      if (this.name && this.password) {
+        const user = firebase.auth().currentUser;
+
+        if (user) {
+          // Actualizar el perfil del usuario con el nuevo nombre
+          user
+            .updateProfile({
+              displayName: this.name,
+            })
+            .then(() => {
+              // Actualizar la contraseña del usuario
+              return user.updatePassword(this.password);
+            })
+            .then(() => {
+              this.name = "";
+              this.password = "";
+              this.email = "";
+              this.good = true;
+
+              setTimeout(() => {
+                // Recargar la página para visualizar el cambio
+                window.location.reload();
+              }, 1000);
+            })
+            .catch((err) => {
+              this.error = err.message;
+            });
+        } else {
+          this.error = "No hay usuario autenticado.";
+        }
       } else {
         this.error = "Todos los campos son requeridos";
       }
+    },
+  },
+  computed: {
+    formIsValid() {
+      return !!this.name || !!this.password;
     },
   },
 };

@@ -27,6 +27,7 @@
           </button>
         </form>
 
+        <!--Error en el inicio de sesión-->
         <div class="error" v-if="error">
           <hr />
           <div class="notification is-danger">

@@ -1,9 +1,8 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <router-link class="navbar-item" to="/">
-        <img src="@/components/assets/logo.png" class="logo" />
-        <h3 class="title is-3">SCALL</h3>
+      <router-link to="/">
+        <img src="@/components/assets/ScallCucei.png" class="logo" />
       </router-link>
 
       <a
@@ -35,36 +34,37 @@
                 <!--Dashboard-->
                 <router-link class="navbar-item" to="/dashboard">
                   <i class="fa fa-tint"></i>
-                  <span class="espacio">Precipitación anual</span>
+                  <span class="espacio-izq">Precipitación anual</span>
                 </router-link>
                 <!--Pronóstico-->
                 <a class="navbar-item" href="https://pronostico.vercel.app/">
                   <i class="fa fa-cloud"></i>
-                  <span class="espacio">Pronóstico del clima</span></a
+                  <span class="espacio-izq">Pronóstico del clima</span></a
                 >
                 <!--SCALL-->
                 <router-link class="navbar-item" to="/SCALL">
-                  <i class="fa fa-cog"></i>
-                  <span class="espacio">Configurar el SCALL</span>
+                  <i class="fa fa-info-circle"></i>
+                  <span class="espacio-izq">Info del SCALL</span>
                 </router-link>
                 <!--Excedente-->
                 <router-link class="navbar-item" to="/Excedente">
                   <i class="fa fa-exclamation"></i>
-                  <span class="espacio">Excendete de agua</span>
+                  <span class="espacio-izq">Excendete de agua</span>
                 </router-link>
                 <!--Update-->
                 <router-link class="navbar-item" to="/update">
                   <i class="fa fa-user-circle"></i>
-                  <span class="espacio">Actualizar perfil</span>
+                  <span class="espacio-izq">Actualizar perfil</span>
                 </router-link>
                 <!--Cerrar sesión-->
                 <a class="navbar-item" @click.prevent="logout">
                   <i class="fa fa-window-close"></i>
-                  <span class="espacio">Cerrar sesión</span></a
+                  <span class="espacio-izq underline-on-hover"
+                    >Cerrar sesión</span
+                  ></a
                 >
               </div>
             </div>
-            <p class="white">aaaaaaaaa</p>
           </template>
 
           <template v-else>
@@ -80,6 +80,7 @@
         </div>
       </div>
     </div>
+    <img src="@/components/assets/udg.jpg" class="logo" />
   </nav>
 </template>
 
@@ -124,23 +125,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.navbar {
-  margin-bottom: 30px;
-}
-
-.logo {
-  height: max-content;
-  width: max-content;
-  margin: 10px;
-}
-
-.white {
-  color: white;
-}
-
-.espacio {
-  margin-left: 10px;
-}
-</style>

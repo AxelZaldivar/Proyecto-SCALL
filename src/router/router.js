@@ -6,7 +6,7 @@ import Login from '../views/Auth/Login.vue'
 import Register from '../views/Auth/Register.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Update from '../views/Auth/Update.vue'
-import SCALL from '../views/SCALL.vue'
+import SCALL from '../views/SCALL/SCALL.vue'
 import Excedente from '../views/Excedente.vue'
 
 //importar Firebase para recuperar el usuario y darle acceso al Dashboard
@@ -61,7 +61,7 @@ const routes = [
   meta: {
     requireAuth: true
   }
-}
+},
 ]
 
 const router = createRouter({

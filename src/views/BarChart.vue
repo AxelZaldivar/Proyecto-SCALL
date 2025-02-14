@@ -57,7 +57,7 @@ export default {
         ],
         datasets: [
           {
-            //label: "Mílimetros de precipitación",
+            label: "Mílimetros de precipitación",
             data: [],
             borderWidth: 2,
             borderRadius: 10,
@@ -90,27 +90,6 @@ export default {
         value12: doc.data().Diciembre,
       }));
       return data;
-    },
-
-    //funcion (que no sirve) para obtener los datos de Firestore
-    async getYears() {
-      this.years = [];
-      this.find = null;
-      this.query = query(collection(firebase, "Lluvia"));
-
-      await getDocs(this.query)
-        .then((querySnapshot) => {
-          if (querySnapshot.size < 1) {
-            this.find = true;
-          } else {
-            querySnapshot.forEach((doc) => {
-              this.count = this.count + 1;
-              this.years.push(doc.data());
-            });
-          }
-        })
-        .catch(() => (this.find = true));
-      this.cargarDatos();
     },
 
     //funcion para cargar los datos al grafico
@@ -173,23 +152,23 @@ export default {
           chartInstance.destroy();
         }
         //variable para crear la animación de retardo
-        let delayed;
+        //let delayed;
         //creacion del grafico
         const chart = new Chart(ctx, {
           type: "bar",
           data: this.chartData,
-          options: this.chartOptions,
+          //options: this.chartOptions,
           options: {
             animation: {
               onComplete: () => {
-                delayed: true;
+                //delayed: true;
               },
               delay: (context) => {
                 let delay = 0;
                 if (
                   context.type === "data" &&
-                  context.mode === "default" &&
-                  !delayed
+                  context.mode === "default"// &&
+                  //!delayed
                 ) {
                   delay = context.dataIndex * 300 + context.datasetIndex * 100;
                 }
@@ -224,7 +203,7 @@ export default {
             : value < 80
             ? "#F46300"
             : value < 140
-            ? "#0358B6"
+            ? "#FFFF00"
             : "#44DE28";
         return color;
       };
