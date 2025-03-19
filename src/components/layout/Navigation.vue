@@ -37,7 +37,7 @@
                   <span class="espacio-izq">Precipitación anual</span>
                 </router-link>
                 <!--Pronóstico-->
-                <a class="navbar-item" href="https://pronostico.vercel.app/">
+                <a class="navbar-item" href="https://pronostico-scall.vercel.app/">
                   <i class="fa fa-cloud"></i>
                   <span class="espacio-izq">Pronóstico del clima</span></a
                 >
