@@ -41,7 +41,7 @@
             </button>
           </div>
           <div class="col-xs-6 mr-auto mt-auto mb-auto">
-            Nivel actual del tanque.
+            <strong>Nivel</strong> actual del tanque.
             <input
               class="form-control"
               v-model="nivelTXT"
@@ -71,7 +71,7 @@
             </button>
           </div>
           <div class="col-xs-6 mr-auto mt-auto mb-auto">
-            Calidad del agua almacenada en el tanque (solidos suspendidos).
+            Calidad del agua almacenada en el tanque <strong>(solidos suspendidos)</strong>.
             <input
               class="form-control"
               v-model="limpioTXT"
@@ -101,7 +101,7 @@
             </button>
           </div>
           <div class="col-xs-6 mr-auto mt-auto mb-auto">
-            Calidad del agua almacenada en el tanque (nivel de PH).
+            Calidad del agua almacenada en el tanque <strong>(nivel de PH)</strong>.
             <input class="form-control" v-model="phTXT" type="text" readonly />
           </div>
         </div>
@@ -111,13 +111,13 @@
       <div class="cardi">
         <div class="horizontal">
           <div>
-            <img src="@/components/assets/lluvia.jpg" class="search" />
+            <img src="@/components/assets/pl.jpg" class="search" />
             <button class="button is-primary espacio-izq" @click="openModal(3)">
               <i class="fa fa-info-circle"></i>
             </button>
           </div>
           <div class="col-xs-6 mr-auto mt-auto mb-auto">
-            Litros de precipitación captados en la última lluvia.
+            Litros de precipitación <strong>captados</strong> en la última lluvia.
             <input class="form-control" v-model="mmTXT" type="text" readonly />
           </div>
         </div>
@@ -133,7 +133,7 @@
             </button>
           </div>
           <div class="col-xs-6 mr-auto mt-auto mb-auto">
-            Estado de lluvia.
+            Estado de <strong>lluvia</strong>.
             <input class="form-control" v-model="lluvia" type="text" readonly />
           </div>
         </div>
@@ -143,13 +143,13 @@
       <div class="cardi">
         <div class="horizontal">
           <div>
-            <img src="@/components/assets/lluvia.jpg" class="search" />
+            <img src="@/components/assets/clock.jpg" class="search" />
             <button class="button is-primary espacio-izq" @click="openModal(5)">
               <i class="fa fa-info-circle"></i>
             </button>
           </div>
           <div class="col-xs-6 mr-auto mt-auto mb-auto">
-            Tiempo de la última carga de información.
+            <strong>Momento</strong> de la última carga de información.
             <input
               class="form-control"
               v-model="ultima_fecha"

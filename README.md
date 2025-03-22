@@ -1,4 +1,4 @@
-# scall project
+# scall
 
 ## Project setup
 ```

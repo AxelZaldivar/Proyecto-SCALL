@@ -36,7 +36,6 @@ npm run build
           el uso sostenible de los recursos hídricos, lo cual incluye el manejo
           integral del agua de lluvia.
         </p>
-        <img src="../components/assets/SCALL2.png" alt="Pasos" />
       </section>
 
       <section>
@@ -100,6 +99,58 @@ npm run build
             <b>Tipo de material donde se ubicará el almacenamiento:</b>
             Repercute directamente en el costo de la excavación y construcción
             del almacenamiento.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Elementos de un SCALL</h2>
+        <img src="../components/assets/SCALL2.png" alt="Pasos" />
+        <ul>
+          <li>
+            <i class="fa fa-arrow-right"></i> &nbsp;
+            <b>Superficie de captación:</b>
+            Generalmente es el techo o azotea, preferiblemente de lámina
+            metálica, teja, cemento pulido o plástico.
+          </li>
+          <li>
+            <i class="fa fa-arrow-right"></i> &nbsp;
+            <b>Canaletas o bajantes pluviales:</b>
+            Conductos que recogen el agua desde el techo y la canalizan hacia el
+            sistema. Pueden ser de PVC o materiales resistentes a la intemperie.
+            Deben tener pendiente adecuada para que el agua fluya bien.
+          </li>
+          <li>
+            <i class="fa fa-arrow-right"></i> &nbsp;
+            <b>Depósito de primeras aguas:</b>
+            Es un tanque que almacena el primer volumen de agua que cae al
+            inicio de una lluvia. Se separan las primeras aguas dado que estas
+            suelen arrastrar polvo acumulado en el techo, hojas secas, ramas,
+            excremento de aves, e incluso contaminantes que se pudieran acumular
+            durante los días sin lluvia.
+          </li>
+          <li>
+            <i class="fa fa-arrow-right"></i> &nbsp;
+            <b>Filtrar el agua de lluvia:</b>
+            Por lo general, se utiliza un filtro compuesto por varias capas de
+            materiales para mejorar la calidad del agua al eliminar sedimentos,
+            impurezas, malos olores y algunos contaminantes. Es muy útil después
+            del depósito de primeras aguas y antes del almacenamiento o consumo.
+            Por ejemplo, se utiliza fieltro, el cual es una capa superficial que
+            retiene partículas grandes, como hojas pequeñas, tierra, insectos o
+            residuos visibles. También se utiliza piedra volcánica, la cual
+            cuenta con alta porosidad, lo que permite atrapar partículas más
+            pequeñas y sirve como medio físico de filtración. Adicionalmente se
+            suele agregar carbón activado, el cual, absorve malos olores y
+            sabores, químicos, metales pesados, contaminantes orgánicos así como
+            algunos microorganismos y bacterias.
+          </li>
+          <li>
+            <i class="fa fa-arrow-right"></i> &nbsp;
+            <b>Almacenamiento principal:</b>
+            Tanque donde se guarda el agua ya filtrada. Puede ser de plástico,
+            concreto o ferrocemento. Debe estar cerrado y protegido de luz,
+            insectos y polvo para evitar contaminación.
           </li>
         </ul>
       </section>
