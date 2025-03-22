@@ -89,7 +89,7 @@
             <img
               src="@/components/assets/LLENO.png"
               class="search"
-              v-if="ph > 5 && ph < 7"
+              v-if="ph > 5 && ph < 8"
             />
             <img
               src="@/components/assets/VACIO_SUCIO.png"
@@ -186,10 +186,6 @@ export default {
       type: Number,
       default: -1,
     },
-    pluviometro: {
-      type: Number,
-      default: 0,
-    },
     ph: {
       type: Number,
       default: -1,
@@ -265,11 +261,11 @@ export default {
     //Transforma el valor numerico de la calidad del agua a texto
     textoCalidad() {
       if (this.limpio > 0 && this.limpio < 200) {
-        this.limpioTXT = "Limpio";
+        this.limpioTXT = "Limpio (" + this.limpio + " ppm)";
       } else if (200 <= this.limpio && this.limpio <= 300) {
-        this.limpioTXT = "Algo sucio";
+        this.limpioTXT = "Algo sucio (" + this.limpio + " ppm)";
       } else if (this.limpio > 300) {
-        this.limpioTXT = "Muy sucio";
+        this.limpioTXT = "Muy sucio (" + this.limpio + " ppm)";
       } else {
         this.limpioTXT = "PPM desconocido";
       }
@@ -278,13 +274,13 @@ export default {
     //Tranforma el valor numerico del PH en texto
     textoPH() {
       if (this.ph > 0 && this.ph < 5) {
-        this.phTXT = "Demasiada ácida";
-      } else if (this.ph > 7) {
-        this.phTXT = "Demasiada básica";
+        this.phTXT = "Demasiada ácida (" + this.ph + "ph)";
+      } else if (this.ph > 8) {
+        this.phTXT = "Demasiada básica (" + this.ph + "ph)";
       } else if (this.ph == -1) {
         this.phTXT = "PH desconocido";
       } else {
-        this.phTXT = "Agua base";
+        this.phTXT = "Agua base (" + this.ph + "ph)";
       }
     },
 
@@ -293,7 +289,7 @@ export default {
       if (this.mm < 0) {
         this.mmTXT = "Desconocido";
       } else {
-        this.mmTXT = this.mm * this.pluviometro * this.captar + " litros";
+        this.mmTXT = this.mm * this.captar + " litros (" + this.mm + "mm)";
       }
     },
   },

@@ -8,6 +8,7 @@ import Dashboard from '../views/Dashboard.vue'
 import Update from '../views/Auth/Update.vue'
 import SCALL from '../views/SCALL/SCALL.vue'
 import Excedente from '../views/Excedente.vue'
+import Predicciones from '@/views/Predicciones.vue'
 
 //importar Firebase para recuperar el usuario y darle acceso al Dashboard
 import firebase from 'firebase/compat/app';
@@ -58,6 +59,14 @@ const routes = [
   path: '/Excedente',
   name: 'Excedente',
   component: Excedente,
+  meta: {
+    requireAuth: true
+  }
+},
+{
+  path: '/Predicciones',
+  name: 'Predicciones',
+  component: Predicciones,
   meta: {
     requireAuth: true
   }

@@ -38,7 +38,7 @@ export default {
         "Altura del tanque", //(6)
         "Diámetro del tanque", //(7)
         "Captación", //(8)
-        "Pluviómetro", //(9)
+        "Pluviómetro", //(9) (ya no se usa)
         //Error
         "Error", //(10)
         //Actualización correcta de datos

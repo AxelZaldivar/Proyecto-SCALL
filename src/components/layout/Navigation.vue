@@ -51,6 +51,11 @@
                   <i class="fa fa-exclamation"></i>
                   <span class="espacio-izq">Excendete de agua</span>
                 </router-link>
+                <!--Predicciones-->
+                <router-link class="navbar-item" to="/Predicciones">
+                  <i class="fa fa-leaf"></i>
+                  <span class="espacio-izq">Primeras aguas</span>
+                </router-link>
                 <!--Update-->
                 <router-link class="navbar-item" to="/update">
                   <i class="fa fa-user-circle"></i>

@@ -12,7 +12,6 @@
           :nivel="nivel"
           :limpio="limpio"
           :mm="mm"
-          :pluviometro="pluviometro"
           :ph="ph"
           :captar="captar"
           :llueve="llueve"
@@ -98,36 +97,12 @@
               </div>
             </div>
 
-            <!--Pluviometro-->
-            <div class="cardi">
-              <div class="horizontal">
-                <div>
-                  <img src="@/components/assets/pl.jpg" class="search" />
-                  <button
-                    class="button is-primary espacio-izq"
-                    @click="openModal(9)"
-                  >
-                    <i class="fa fa-info-circle"></i>
-                  </button>
-                </div>
-                <div class="col-xs-6 mr-auto mt-auto mb-auto">
-                  Ingrese la capacidad del pluviómetro en <b>mililitros</b>.
-                  <input
-                    class="form-control"
-                    placeholder="Capacidad del p. (mm)"
-                    v-model="pluviometro"
-                    type="text"
-                  />
-                </div>
-              </div>
-            </div>
-
             <!--Actualizar los parámetros-->
             <button
               class="btn button is-primary"
               type="submit"
               @click="actualizar"
-              :disabled="tanque < 1 || captar < 0.1 || pluviometro < 1"
+              :disabled="tanque < 1 || captar < 0.1"
             >
               <strong>
                 <i class="fa fa-upload espacio-der"></i>
@@ -183,7 +158,6 @@ export default {
       mm: null,
       nivel: null,
       ph: null,
-      pluviometro: null,
       altura: null,
       diametro: null,
       ultimo_cambio: null,
@@ -233,9 +207,8 @@ export default {
             this.mm = doc.data().mm;
             this.nivel = doc.data().nivel;
             this.ph = doc.data().ph;
-            this.pluviometro = doc.data().pluviometro;
             this.altura = doc.data().altura;
-            this.diametro = doc.data().diametro*2;
+            this.diametro = doc.data().radio*2;
             this.ultimo_cambio = doc.data().timestamp.toDate().toLocaleString();
             this.cambio++;
           } else {
@@ -253,10 +226,9 @@ export default {
       collectionRef
         .doc(this.id)
         .update({
-          altura: this.altura,
-          diametro: this.diametro/2,
-          captar: this.captar,
-          pluviometro: this.pluviometro,
+          altura: this.altura.toString(),
+          diametro: (this.diametro/2).toString(),
+          captar: this.captar.toString(),
         })
         .then(() => {
           this.error = null;
