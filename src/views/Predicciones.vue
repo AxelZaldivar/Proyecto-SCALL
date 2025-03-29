@@ -33,16 +33,21 @@
           </button>
         </div>
 
+        <!--Spinner de carga-->
+        <div v-if="cargando" class="spinner"></div>
+
         <div class="card" v-if="prediction !== null">
           <p>
-            Para la ciudad de <strong>{{ city }}</strong
+            Para la ciudad de <strong>{{ prediction.ciudad }}</strong
             >, dado que no se han presentado precipitaciones en los últimos
-            <strong>{{ prediction.dias_sin_lluvia }} días</strong>, que los
-            puntos IMECA de la ciudad son de <strong>{{ prediction.imeca }}</strong
-            >, la velocidad del viento es de
+            <strong>{{ prediction.dias_sin_lluvia }} días</strong>, que la
+            calidad del aire se encuentra en
+            <strong>{{ prediction.imeca }} puntos IMECA</strong>, que la
+            velocidad del viento es de
             <strong>{{ prediction.viento }} km/h</strong> y que la humedad se
-            encuentra en <strong>{{ prediction.humedad }}%</strong>
-            el porcentaje estimado de primeras aguas para la próxima lluvia es
+            encuentra en
+            <strong>{{ prediction.humedad }}%</strong>
+            , el porcentaje estimado de primeras aguas para la próxima lluvia es
             de:
             <strong>{{ prediction.porcentaje_tiro }}%</strong>
           </p>
@@ -67,10 +72,12 @@ export default {
       city: "",
       prediction: null,
       errorMsg: null,
+      cargando: false,
     };
   },
   methods: {
     async makePrediction() {
+      this.cargando = true;
       this.prediction = null;
       this.errorMsg = null;
       try {
@@ -84,6 +91,7 @@ export default {
         this.errorMsg =
           "No se pudo obtener la predicción. Verifica el nombre de la ciudad o intenta más tarde.";
       }
+      this.cargando = false;
     },
   },
 };
